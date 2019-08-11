@@ -24,7 +24,7 @@ dongtacs=['05']
 import json
 
 tocdovideo=24
-tocdomang=
+tocdomang=2
 def getbatchposes(poses,tocdovideo,tocdomang,batch_id):
     ans={}
 
