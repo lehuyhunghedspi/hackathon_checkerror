@@ -11,6 +11,8 @@ def playrecord():
     pass
 def playvideo():
     pass
+
+
 dongtacs=['01','02']
 
 i=0

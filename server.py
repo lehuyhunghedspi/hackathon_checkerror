@@ -4,8 +4,6 @@ def receive_video():
 
 def detecthumanpose():
     pass
-def checkerror(previouspose,pose,dongtac):
-    pass
 def send_feedback(result):
     pass
 def newprocess(connect):
