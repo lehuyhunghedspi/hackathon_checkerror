@@ -1,21 +1,22 @@
 
+def check_05(previouspose,batch_poses,dongtac,batch_id):
+    count_fail_batch = 0
+    for batch in previouspose:
+        for pose in batch:
+            if abs(batch[pose]['LKnee'][0] - batch[pose]['LBigToe'][0]) > 10:
+                count_fail_batch += 1
+                break
 
+    print(count_fail_batch, len(previouspose))
+    if count_fail_batch > 0.5 * len(previouspose) and count_fail_batch > 5:
+        return {'correct': False, 'error_type': 'saichan'}
 def checkerror(previouspose,batch_poses,dongtac,batch_id):
-    if dongtac=='01':
+    if dongtac=='03':
         pass
-    if dongtac=='02':
+    if dongtac=='04':
         pass
     if dongtac=='05':
-        count_fail_batch=0
-        for batch in previouspose:
-            for pose in batch:
-                if abs(batch[pose]['LKnee'][0] - batch[pose]['LBigToe'][0]) > 10:
-                    count_fail_batch+=1
-                    break
-
-        print(count_fail_batch,len(previouspose))
-        if count_fail_batch>0.5*len(previouspose)  and count_fail_batch>5:
-            return {'correct':False,'error_type':'saichan'}
+        check_05(previouspose,batch_poses,dongtac,batch_id)
     return {'correct':True}
 
 dongtacs=['05']
